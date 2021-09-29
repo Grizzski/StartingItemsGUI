@@ -26,7 +26,7 @@ namespace Phedg1Studios {
             }
 
 
-            static public List<float> GetDifficultyParabola(float easyMultiplier, float normalMultiplier, float hardMultiplier) {
+            static public List<float> GetDifficultyParabola(float easyMultiplier, float normalMultiplier, float hardMultiplier, float TyphoonMultiplier) {
                 float max = Mathf.Infinity;
                 float min = -Mathf.Infinity;
                 float a = 0;
@@ -37,6 +37,7 @@ namespace Phedg1Studios {
                      new Vector2(RoR2.DifficultyCatalog.GetDifficultyDef(RoR2.DifficultyIndex.Easy).scalingValue, easyMultiplier),
                      new Vector2(RoR2.DifficultyCatalog.GetDifficultyDef(RoR2.DifficultyIndex.Normal).scalingValue, normalMultiplier),
                      new Vector2(RoR2.DifficultyCatalog.GetDifficultyDef(RoR2.DifficultyIndex.Hard).scalingValue, hardMultiplier),
+                    new Vector2(RoR2.DifficultyCatalog.GetDifficultyDef(RoR2.DifficultyIndex.Typhoon).scalingValue, TyphoonMultiplier),
                 };
                 Dictionary<float, List<float>> dictCoordinates = new Dictionary<float, List<float>>();
                 foreach (Vector2 coordinate in unsortedCoordinates) {
